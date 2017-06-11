@@ -1,5 +1,5 @@
-##React JS simple Project
-###Simple currency exchange
+## React JS simple Project
+### Simple currency exchange
 
 * Used modules:
     * node.js
