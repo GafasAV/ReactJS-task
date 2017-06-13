@@ -38,6 +38,7 @@ const defaultProps = {
   ZAR:14.437
 };
 
+//  index.html header builder.
 class NavBarTop extends Component {
   render() {
     return (
@@ -53,6 +54,7 @@ class NavBarTop extends Component {
   }
 }
 
+//  html <select> option builder. Build select From currency converter.
 class CurrencyFromOptions extends Component {
   constructor(props) {
     super(props);
@@ -85,6 +87,7 @@ class CurrencyFromOptions extends Component {
   }
 }
 
+//  html <select> option builder. Build select To currency converter.
 class CurrencyToOptions extends Component {
   constructor(props) {
     super(props);
@@ -117,9 +120,18 @@ class CurrencyToOptions extends Component {
   }
 }
 
-class Converter extends Component {
+//  Main Converter builder. Init all params and props, load data from Fixer.io
+export default class Converter extends Component {
   constructor(props) {
     super(props);
+
+    const URL = 'http://api.fixer.io/latest';
+
+    fetch(URL)
+      .then(response => response.json())
+      .then(data => {
+        this.defaultProps = { currencies: data.rates };
+      });
 
     this.handleCurFromChange = this.handleCurFromChange.bind(this);
     this.handleCurToChange = this.handleCurToChange.bind(this);
@@ -133,16 +145,6 @@ class Converter extends Component {
       amountValue: 0,
       result: 0
     };
-  }
-
-  componentDidMount() {
-    const URL = 'http://api.fixer.io/latest';
-
-    fetch(URL)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ currencies: data.rates });
-      });
   }
 
   handleCurFromChange(e) {
@@ -245,5 +247,3 @@ CurrencyToOptions.propTypes = {
 Converter.propTypes = {
   currencies: PropTypes.object
 };
-
-export default Converter;
