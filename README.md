@@ -1,9 +1,9 @@
-## React JS simple Project
-### Simple currency exchange
+## Simple currency exchange by Fixer.io API.
+### ... on ReactJS
 
-* Used modules:
+* Some used:
+    * ReactJS
     * node.js
-    * ReactJs
     * webpack
     * eslint
-    * bable
+    * babel

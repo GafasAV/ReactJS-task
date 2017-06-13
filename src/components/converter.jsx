@@ -120,7 +120,7 @@ class CurrencyToOptions extends Component {
   }
 }
 
-//  Main Converter builder. Init all params and props, load data from Fixer.io
+//  Main Converter builder. Init params and props, load data from Fixer.io
 export default class Converter extends Component {
   constructor(props) {
     super(props);
