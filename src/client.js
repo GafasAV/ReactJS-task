@@ -4,5 +4,5 @@ import Converter  from 'components/converter.jsx';
 
 ReactDOM.render(
   <Converter />,
-	document.getElementById('root')
+  document.getElementById('root')
 );
