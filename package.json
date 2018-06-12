@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8050 --host 0.0.0.0",
     "start": "set NODE_PATH=./src&& nodemon ./src/server.js"
   },
-  "author": "Igor Khitrikh",
+  "author": "Andrew Gafas",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.1",
